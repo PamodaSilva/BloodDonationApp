@@ -2,12 +2,14 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, Button} from 'react-native';
 
-export default class Root extends Component {
+export default class Home extends Component {
   constructor() {
     super();
   }
 
- 
+  onPressLogin = () => {
+    this.props.navigation.navigate('login');
+  }
 
   render() {
     return (
