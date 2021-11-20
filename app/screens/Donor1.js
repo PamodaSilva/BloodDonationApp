@@ -10,33 +10,33 @@ export default class Donor1 extends Component {
   }
 
   render(){
-      return (
-        <View>
-            <SignIn/>
-            <View style={styles.view1}>
-                <TextInput style={styles.input}
-                placeholder="Name"
-                onChangeText = {this.handleName}/>
-                <TextInput style={styles.input}
-                placeholder="City"
-                onChangeText = {this.handleCity}/>
-                <TextInput style={styles.input}
-                placeholder="Blood Type"
-                onChangeText = {this.handleBloodType}/>
-                <TextInput style={styles.input}
-                placeholder="NIC"
-                onChangeText = {this.handleNIC}/>
-                <TextInput style={styles.input}
-                placeholder="Blood Bank ID"
-                onChangeText = {this.handleBloodBankID}/>
-            </View>
-            <Text style={styles.text1}> *If you have </Text>
-            <TouchableOpacity style={styles.button} onPress ={this.onPressNext}>
-              <Text style={styles.text2}> Next </Text>
-            </TouchableOpacity>
-            <Account/>
+    return (
+      <View>
+        <SignIn/>
+        <View style={styles.view1}>
+            <TextInput style={styles.input}
+              placeholder="Name"
+              onChangeText = {this.handleName}/>
+            <TextInput style={styles.input}
+              placeholder="City"
+              onChangeText = {this.handleCity}/>
+            <TextInput style={styles.input}
+              placeholder="Blood Type"
+              onChangeText = {this.handleBloodType}/>
+            <TextInput style={styles.input}
+              placeholder="NIC"
+              onChangeText = {this.handleNIC}/>
+            <TextInput style={styles.input}
+              placeholder="Blood Bank ID"
+              onChangeText = {this.handleBloodBankID}/>
         </View>
-      );
+        <Text style={styles.text1}> *If you have </Text>
+        <TouchableOpacity style={styles.button} onPress ={this.onPressNext}>
+          <Text style={styles.text2}> Next </Text>
+        </TouchableOpacity>
+        <Account/>
+      </View>
+    );
   }
 }
 

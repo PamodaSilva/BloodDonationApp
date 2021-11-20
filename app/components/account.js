@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet,TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default class Donor1 extends Component {
+export default class account extends Component {
   constructor() {
     super();
   }
 
   render(){
-      return (
+    return (
         <View>
             <Text style={styles.text1}> Do You have an Account ? </Text>
             <TouchableOpacity style={styles.register} >

@@ -14,19 +14,19 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.fullView}>
-        <View style={styles.view2}> 
+        <View style={styles.view2}>
           <Text style={styles.text1}> Blood Donation App </Text>
           <Text style={styles.text2}> Save Life </Text>
         </View>
         <View style={styles.view3}>
-            <Image source={require('../assets/Image/logo1.png')} />
+          <Image source={require('../assets/Image/logo1.png')} />
         </View>
         <View style={styles.button}>
-            <Button title="Login"
+          <Button title="Login"
             onPress={this.onPressLogin}/>
         </View>
         <View style={styles.view4}>
-            <Image source={require('../assets/Image/pic1.png')} />
+          <Image source={require('../assets/Image/pic1.png')} />
         </View>
       </View>
     );
