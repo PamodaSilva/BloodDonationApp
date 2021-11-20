@@ -4,7 +4,7 @@ import {Text, View, StyleSheet, TouchableOpacity, TextInput, Alert} from 'react-
 import SignIn from '../components/signin';
 import Account from '../components/account';
 
-export default class Donor1 extends Component {
+export default class Donor2 extends Component {
   constructor() {
     super();
   }
@@ -57,7 +57,7 @@ export default class Donor1 extends Component {
         </View>
         <TouchableOpacity style={styles.button} onPress ={
             () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
-          <Text style={styles.text2}> Register </Text>
+          <Text style={styles.text1}> Register </Text>
         </TouchableOpacity>
         <Account/>
       </View>
@@ -65,10 +65,8 @@ export default class Donor1 extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
-  text1:{
-    marginLeft: 80,
-  },
   view1: {
     marginTop: 30,
     alignItems: 'center',
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F67676',
     marginLeft: 45,
   },
-  text2: {
+  text1: {
     fontSize: 25,
     textAlign: 'center',
     margin: 4,
