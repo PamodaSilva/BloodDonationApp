@@ -1,16 +1,34 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, TextInput, TouchableOpacity} from 'react-native';
-
+import {Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Alert} from 'react-native';
 export default class login extends Component {
   constructor() {
     super();
   }
+  state = {
+    username: '',
+    password: '',
+  }
+  handleUsername = (text) => {
+      this.setState({ username: text });
+  }
+  handlePassword = (text) => {
+      this.setState({ password: text });
+  }
 
-  //const [text , setText] = React.useState();
+  pressLogin = (name, pw) => {
+    if (name === 'admin' && pw === '123'){
+      Alert.alert('Success!..', ' Login successfully !!', [
+        {text: 'ok.'},
+      ]);
+    } else {
+      Alert.alert('Not Success!..', ' Login not successfully !!', [
+        {text: 'ok.'},
+      ]);
+    }
+  }
 
   render() {
-
     return (
       <View style={styles.fullView}>
         <View style={styles.view1}>
@@ -20,14 +38,13 @@ export default class login extends Component {
         <View style={styles.view2}>
             <TextInput style={styles.input}
             placeholder="Username"
-            //onChangeText = {setText}
-            />
+            onChangeText = {this.handleUsername}/>
             <TextInput style={styles.input}
             placeholder="Password"
-            //onChangeText = {setText}
-            />
+            onChangeText = {this.handlePassword}/>
         </View>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress ={
+          () => this.pressLogin(this.state.username, this.state.password)}>
           <Text style={styles.text2}> LogIn </Text>
         </TouchableOpacity>
         <Text style={styles.text3}> *Use Your NIC for Username </Text>
