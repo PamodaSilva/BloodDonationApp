@@ -28,6 +28,14 @@ export default class login extends Component {
     }
   }
 
+  onPressReset = () => {
+    this.props.navigation.navigate('resetPassword');
+  }
+
+  onPressRegister = () => {
+    this.props.navigation.navigate('page01');
+  }
+
   render() {
     return (
       <View>
@@ -49,12 +57,12 @@ export default class login extends Component {
         </TouchableOpacity>
         <Text style={styles.text3}> *Use Your NIC for Username </Text>
         <TouchableOpacity>
-          <Text style={styles.text4}> Forgot Password ? </Text>
+          <Text style={styles.text4} onPress={this.onPressReset}> Forgot Password ? </Text>
         </TouchableOpacity>
         <View>
           <Text style={styles.text5}> Don't Have Account ? </Text>
           <TouchableOpacity>
-          <Text style={styles.text6}> - Register - </Text>
+          <Text style={styles.text6} onPress={this.onPressRegister}> - Register - </Text>
         </TouchableOpacity>
         </View>
       </View>

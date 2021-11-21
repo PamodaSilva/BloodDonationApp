@@ -4,6 +4,6 @@ import Navigator from './navigation/Navigate';
 
 export default class root extends Component {
     render(){
-        return <Navigator />;
+        return <Navigator/>;
     }
 }
