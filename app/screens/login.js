@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Alert} from 'react-native';
+import {Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Alert, ScrollView} from 'react-native';
 export default class login extends Component {
   constructor() {
     super();
@@ -38,7 +38,7 @@ export default class login extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <View style={styles.view1}>
           <Image source={require('../assets/Image/pic4.png')} />
         </View>
@@ -65,7 +65,7 @@ export default class login extends Component {
           <Text style={styles.text6} onPress={this.onPressRegister}> - Register - </Text>
         </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

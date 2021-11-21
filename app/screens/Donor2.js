@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, TextInput, Alert} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, TextInput, Alert, ScrollView} from 'react-native';
 import SignIn from '../components/signin';
 export default class Donor2 extends Component {
   constructor() {
@@ -37,7 +37,7 @@ export default class Donor2 extends Component {
 
   render(){
     return (
-      <View>
+      <ScrollView>
         <SignIn/>
         <View style={styles.view1}>
           <TextInput style={styles.input}
@@ -68,7 +68,7 @@ export default class Donor2 extends Component {
             <Text style={styles.text3}> Sign In </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
