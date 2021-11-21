@@ -27,40 +27,45 @@ export default class finder extends Component {
         Alert.alert('Alert!..', ' Password Equal !!', [
             {text: 'ok.'},
         ]);
+        this.props.navigation.navigate('login');
     }
+  }
+
+  onPressBack = () => {
+    this.props.navigation.navigate('login');
   }
 
   render(){
     return (
       <ScrollView>
         <View>
-            <Text style={styles.text1}> Reset Your Password </Text>
+          <Text style={styles.text1}> Reset Your Password </Text>
         </View>
         <View style={styles.view1}>
           <Image source={require('../assets/Image/pic3.png')} style={styles.image}/>
         </View>
         <View style={styles.view2}>
-            <TextInput style={styles.input}
-              placeholder="NIC"
-              onChangeText = {this.handleNIC}/>
-            <TextInput style={styles.input}
-              placeholder="Password"
-              onChangeText = {this.handlePw}
-              secureTextEntry= {true}/>
-            <TextInput style={styles.input}
-              placeholder="Re-Type Password"
-              onChangeText = {this.handleRePw}
-              secureTextEntry= {true}/>
+          <TextInput style={styles.input}
+            placeholder="NIC"
+            onChangeText = {this.handleNIC}/>
+          <TextInput style={styles.input}
+            placeholder="Password"
+            onChangeText = {this.handlePw}
+            secureTextEntry= {true}/>
+          <TextInput style={styles.input}
+            placeholder="Re-Type Password"
+            onChangeText = {this.handleRePw}
+            secureTextEntry= {true}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
-        () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
+          () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
           <Text style={styles.text2}> Reset </Text>
         </TouchableOpacity>
         <View>
-            <Text style={styles.text3}> Do You Remember the Password ? </Text>
-            <TouchableOpacity style={styles.back} >
-                <Text style={styles.text4}> -- Back -- </Text>
-            </TouchableOpacity>
+          <Text style={styles.text3}> Do You Remember the Password ? </Text>
+          <TouchableOpacity style={styles.back} onPress={this.onPressBack}>
+              <Text style={styles.text4}> -- Back -- </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );
