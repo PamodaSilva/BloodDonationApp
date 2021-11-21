@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import SignIn from '../components/signin';
-import Account from '../components/account';
 
 export default class finder extends Component {
   constructor() {
@@ -29,7 +28,12 @@ export default class finder extends Component {
         Alert.alert('Alert!..', ' Password Equal !!', [
             {text: 'ok.'},
         ]);
+        this.props.navigation.navigate('login');
     }
+  }
+
+  onPressSignIn = () => {
+    this.props.navigation.navigate('login');
   }
 
   render(){
@@ -59,10 +63,15 @@ export default class finder extends Component {
               secureTextEntry= {true}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
-        () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
+          () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
           <Text style={styles.text1}> Register </Text>
         </TouchableOpacity>
-        <Account/>
+        <View>
+          <Text style={styles.text2}> Do You have an Account ? </Text>
+          <TouchableOpacity style={styles.register} onPress={this.onPressSignIn}>
+            <Text style={styles.text3}> Sign In </Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     );
   }
@@ -95,4 +104,19 @@ const styles = StyleSheet.create({
     margin: 5,
     color: '#000',
   },
-  });
+  text3: {
+    fontSize: 20,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+  },
+  register: {
+    alignItems: 'center',
+  },
+  text2: {
+    fontSize: 22,
+    textAlign: 'center',
+    margin: 10,
+    color: '#000',
+    marginTop: 20,
+  },
+});

@@ -2,11 +2,17 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import SignIn from '../components/signin';
-import Account from '../components/account';
-
 export default class Donor1 extends Component {
   constructor() {
     super();
+  }
+
+  onPressNext = () => {
+    this.props.navigation.navigate('Donor02');
+  }
+
+  onPressSignIn = () => {
+    this.props.navigation.navigate('login');
   }
 
   render(){
@@ -14,27 +20,32 @@ export default class Donor1 extends Component {
       <View>
         <SignIn/>
         <View style={styles.view1}>
-            <TextInput style={styles.input}
-              placeholder="Name"
-              onChangeText = {this.handleName}/>
-            <TextInput style={styles.input}
-              placeholder="City"
-              onChangeText = {this.handleCity}/>
-            <TextInput style={styles.input}
-              placeholder="Blood Type"
-              onChangeText = {this.handleBloodType}/>
-            <TextInput style={styles.input}
-              placeholder="NIC"
-              onChangeText = {this.handleNIC}/>
-            <TextInput style={styles.input}
-              placeholder="Blood Bank ID"
-              onChangeText = {this.handleBloodBankID}/>
+          <TextInput style={styles.input}
+            placeholder="Name"
+            onChangeText = {this.handleName}/>
+          <TextInput style={styles.input}
+            placeholder="City"
+            onChangeText = {this.handleCity}/>
+          <TextInput style={styles.input}
+            placeholder="Blood Type"
+            onChangeText = {this.handleBloodType}/>
+          <TextInput style={styles.input}
+            placeholder="NIC"
+            onChangeText = {this.handleNIC}/>
+          <TextInput style={styles.input}
+            placeholder="Blood Bank ID"
+            onChangeText = {this.handleBloodBankID}/>
         </View>
         <Text style={styles.text1}> *If you have </Text>
         <TouchableOpacity style={styles.button} onPress ={this.onPressNext}>
           <Text style={styles.text2}> Next </Text>
         </TouchableOpacity>
-        <Account/>
+        <View>
+          <Text style={styles.text3}> Do You have an Account ? </Text>
+          <TouchableOpacity style={styles.register} onPress={this.onPressSignIn}>
+            <Text style={styles.text4}> Sign In </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -70,4 +81,19 @@ const styles = StyleSheet.create({
     margin: 4,
     color: '#000',
   },
-  });
+  text4: {
+    fontSize: 20,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+  },
+  register: {
+    alignItems: 'center',
+  },
+  text3: {
+    fontSize: 22,
+    textAlign: 'center',
+    margin: 10,
+    color: '#000',
+    marginTop: 35,
+  },
+});
