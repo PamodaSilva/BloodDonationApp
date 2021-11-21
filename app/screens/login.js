@@ -30,7 +30,7 @@ export default class login extends Component {
 
   render() {
     return (
-      <View style={styles.fullView}>
+      <View>
         <View style={styles.view1}>
           <Image source={require('../assets/Image/pic4.png')} />
         </View>
@@ -48,13 +48,13 @@ export default class login extends Component {
           <Text style={styles.text2}> LogIn </Text>
         </TouchableOpacity>
         <Text style={styles.text3}> *Use Your NIC for Username </Text>
-        <TouchableOpacity style={styles.Fpw} >
+        <TouchableOpacity>
           <Text style={styles.text4}> Forgot Password ? </Text>
         </TouchableOpacity>
-        <View style={styles.view3}>
+        <View>
           <Text style={styles.text5}> Don't Have Account ? </Text>
-          <TouchableOpacity style={styles.register} >
-          <Text style={styles.text6}> Register </Text>
+          <TouchableOpacity>
+          <Text style={styles.text6}> - Register - </Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -105,30 +105,20 @@ const styles = StyleSheet.create({
   text4: {
     fontSize: 19,
     textAlign: 'left',
-    margin: 18,
-    marginLeft: 45,
+    marginLeft: 50,
+    marginTop: 30,
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
   text5: {
     fontSize: 23,
-    textAlign: 'left',
+    textAlign: 'center',
     margin: 10,
-    marginLeft: 30,
     color: '#000',
+    marginTop: 35,
   },
   text6: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 3,
-    color: '#000',
-  },
-  register: {
-    borderWidth: 3,
-    borderRadius:30,
-    margin:8,
-    width: 130,
-    backgroundColor: '#F67676',
-    marginLeft: 240,
   },
 });
