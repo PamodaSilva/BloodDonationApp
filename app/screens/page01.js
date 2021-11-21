@@ -7,6 +7,14 @@ export default class page01 extends Component {
     super();
   }
 
+  onPressDonor = () => {
+    this.props.navigation.navigate('Donor01');
+  }
+
+  onPressFinder = () => {
+    this.props.navigation.navigate('Finder');
+  }
+
   render(){
     return (
       <View>
