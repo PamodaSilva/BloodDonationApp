@@ -21,6 +21,7 @@ export default class login extends Component {
       Alert.alert('Success!..', ' Login successfully !!', [
         {text: 'ok.'},
       ]);
+      this.props.navigation.navigate('Main');
     } else {
       Alert.alert('Not Success!..', ' Login not successfully !!', [
         {text: 'ok.'},
