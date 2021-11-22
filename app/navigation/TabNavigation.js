@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 class App extends Component {
     render() {
         return (
-            <Tab.Navigator initialRouteName="DonorFinder">
+            <Tab.Navigator>
                 <Tab.Screen name="DonorFinder" component={DonorFinder}/>
                 <Tab.Screen name="Amount" component={Amount}/>
                 <Tab.Screen name="About" component={About}/>

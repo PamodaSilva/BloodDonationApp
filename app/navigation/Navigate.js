@@ -9,7 +9,7 @@ import page01 from '../screens/page01';
 import Donor01 from '../screens/Donor1';
 import Donor02 from '../screens/Donor2';
 import Finder from '../screens/Finder';
-import Main from '../screens/Main';
+import BottomNavigation from '../navigation/TabNavigation';
 
 const PrimaryNavigator = createStackNavigator();
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
                     <PrimaryNavigator.Screen name="Donor01" component={Donor01}/>
                     <PrimaryNavigator.Screen name="Donor02" component={Donor02}/>
                     <PrimaryNavigator.Screen name="Finder" component={Finder}/>
-                    <PrimaryNavigator.Screen name="Main" component={Main}/>
+                    <PrimaryNavigator.Screen name="BottomNavigation" component={BottomNavigation}/>
                 </PrimaryNavigator.Navigator>
             </NavigationContainer>
         );
