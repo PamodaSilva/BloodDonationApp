@@ -50,7 +50,8 @@ export default class login extends Component {
             onChangeText = {this.handleUsername}/>
             <TextInput style={styles.input}
             placeholder="Password"
-            onChangeText = {this.handlePassword}/>
+            onChangeText = {this.handlePassword}
+            secureTextEntry= {true}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
           () => this.pressLogin(this.state.username, this.state.password)}>
