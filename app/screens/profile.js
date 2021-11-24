@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 export default class profile extends Component {
   constructor() {
@@ -13,7 +13,7 @@ export default class profile extends Component {
 
   render(){
     return (
-      <View>
+      <ScrollView>
         <View style={styles.view1}>
           <Text style={styles.text1}> My Profile </Text>
         </View>
@@ -33,7 +33,7 @@ export default class profile extends Component {
             <Text style={styles.text3} onPress={this.onPressLogOut}> Log Out </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
       );
   }
 }
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   view2:{
     alignItems: 'center',
-    marginTop: 17,
+    marginTop: 15,
   },
   text2: {
     fontSize: 30,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   view3:{
     alignItems: 'center',
-    marginTop: 25,
+    marginTop: 15,
   },
   detail: {
     borderWidth: 2,
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     width: 150,
     backgroundColor: '#F67676',
     marginLeft: 140,
+    marginBottom: 15,
   },
   text3: {
     fontSize: 25,
