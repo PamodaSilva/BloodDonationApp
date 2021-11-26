@@ -2,9 +2,34 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import SignIn from '../components/signin';
+import Firebase from '@react-native-firebase/app';
 export default class Donor1 extends Component {
   constructor() {
     super();
+  }
+
+  state = {
+    name : '',
+    city: '',
+    bloodType: '',
+    NIC: '',
+    BloodBankID: '',
+  }
+
+  handleName = (text) => {
+    this.setState({ name: text });
+  }
+  handleCity = (text) => {
+    this.setState({ city: text });
+  }
+  handleBloodType = (text) => {
+    this.setState({ bloodType: text });
+  }
+  handleNIC = (text) => {
+    this.setState({ NIC: text });
+  }
+  handleBloodBankID = (text) => {
+    this.setState({ BloodBankID: text });
   }
 
   onPressNext = () => {

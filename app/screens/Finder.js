@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import SignIn from '../components/signin';
+import Firebase from '@react-native-firebase/app';
 
 export default class finder extends Component {
   constructor() {
@@ -9,14 +10,28 @@ export default class finder extends Component {
   }
 
   state = {
+    name : '',
+    city: '',
+    NIC: '',
+    TelPh: '',
     password: '',
     RePassword: '',
   }
-  handlePw = (text) => {
-    this.setState({ password: text });
+
+  handleName = (text) => {
+    this.setState({ name: text });
+  }
+  handleCity = (text) => {
+    this.setState({ city: text });
+  }
+  handleNIC = (text) => {
+    this.setState({ NIC: text });
   }
   handleRePw = (text) => {
     this.setState({ RePassword: text });
+  }
+  handlePw = (text) => {
+    this.setState({ password: text });
   }
 
   pressSetPassword = (pw, RePw) => {

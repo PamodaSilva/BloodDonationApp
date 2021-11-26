@@ -2,14 +2,28 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, Alert, ScrollView} from 'react-native';
 import SignIn from '../components/signin';
+import Firebase from '@react-native-firebase/app';
 export default class Donor2 extends Component {
   constructor() {
     super();
   }
 
   state = {
+    Email: '',
+    TelPh01: '',
+    TelPh02: '',
     password: '',
     RePassword: '',
+  }
+
+  handleEmail = (text) => {
+    this.setState({ Email: text });
+  }
+  handleTel1 = (text) => {
+    this.setState({ TelPh01: text });
+  }
+  handleTel2 = (text) => {
+    this.setState({ TelPh02: text });
   }
   handlePw = (text) => {
       this.setState({ password: text });
