@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import SignIn from '../components/signin';
 import Firebase from '@react-native-firebase/app';
 export default class Donor1 extends Component {
@@ -32,8 +32,14 @@ export default class Donor1 extends Component {
     this.setState({ BloodBankID: text });
   }
 
-  onPressNext = () => {
-    this.props.navigation.navigate('Donor02');
+  onPressNext = (name, city,bloodType, NIC) => {
+    if (!name && !city && !bloodType && !NIC){
+      Alert.alert(' Error!..', 'Some information is not filled out !!', [
+        {text: 'ok.'},
+      ]);
+    } else {
+      this.props.navigation.navigate('Donor02');
+    }
   }
 
   onPressSignIn = () => {
@@ -62,7 +68,8 @@ export default class Donor1 extends Component {
             onChangeText = {this.handleBloodBankID}/>
         </View>
         <Text style={styles.text1}> *If you have </Text>
-        <TouchableOpacity style={styles.button} onPress ={this.onPressNext}>
+        <TouchableOpacity style={styles.button} onPress ={
+          () => this.onPressNext(this.state.name, this.state.city, this.state.bloodType, this.state.NIC)}>
           <Text style={styles.text2}> Next </Text>
         </TouchableOpacity>
         <View>

@@ -32,8 +32,12 @@ export default class Donor2 extends Component {
       this.setState({ RePassword: text });
   }
 
-  pressSetPassword = (pw, RePw) => {
-    if (pw !== RePw){
+  pressSetPassword = (Email, TelPh01, TelPh02, pw, RePw) => {
+    if (!Email && !TelPh01 && !TelPh02 && !pw && !RePw){
+      Alert.alert(' Error!..', 'Some information is not filled out !!', [
+        {text: 'ok.'},
+      ]);
+    } else if (pw !== RePw){
       Alert.alert('Alert!..', ' Password Not Equal !!', [
         {text: 'ok.'},
       ]);
@@ -73,7 +77,8 @@ export default class Donor2 extends Component {
             secureTextEntry= {true}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
-            () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
+            () => this.pressSetPassword(this.state.Email, this.state.TelPh01, this.state.TelPh02,
+              this.state.password, this.state.RePassword)}>
           <Text style={styles.text1}> Register </Text>
         </TouchableOpacity>
         <View>

@@ -17,7 +17,11 @@ export default class login extends Component {
   }
 
   pressLogin = (name, pw) => {
-    if (name === 'admin' && pw === '123'){
+    if (!name && !pw){
+      Alert.alert(' Error!..', 'Your are not fill the Username or Password  !!', [
+        {text: 'ok.'},
+      ]);
+    } else if (name === 'admin' && pw === '123'){
       Alert.alert('Success!..', ' Login successfully !!', [
         {text: 'ok.'},
       ]);

@@ -27,6 +27,9 @@ export default class finder extends Component {
   handleNIC = (text) => {
     this.setState({ NIC: text });
   }
+  handleTel = (text) => {
+    this.setState({ TelPh: text });
+  }
   handleRePw = (text) => {
     this.setState({ RePassword: text });
   }
@@ -34,8 +37,12 @@ export default class finder extends Component {
     this.setState({ password: text });
   }
 
-  pressSetPassword = (pw, RePw) => {
-    if (pw !== RePw){
+  pressSetPassword = (name, city, NIC, TelPh, pw, RePw) => {
+    if (!name && !city && !NIC && !TelPh && !pw && !RePw){
+      Alert.alert(' Error!..', 'Some information is not filled out !!', [
+        {text: 'ok.'},
+      ]);
+    } else if (pw !== RePw){
       Alert.alert('Alert!..', ' Password Not Equal !!', [
         {text: 'ok.'},
       ]);
@@ -78,7 +85,8 @@ export default class finder extends Component {
               secureTextEntry= {true}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
-          () => this.pressSetPassword(this.state.password, this.state.RePassword)}>
+          () => this.pressSetPassword(this.state.name,this.state.city, this.state.TelPh,
+           this.state.password, this.state.RePassword)}>
           <Text style={styles.text1}> Register </Text>
         </TouchableOpacity>
         <View>
