@@ -1,10 +1,30 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {TextInput, View, StyleSheet, Image, TouchableOpacity, Text, ScrollView} from 'react-native';
+import {TextInput, View, StyleSheet, Image, TouchableOpacity, Text, ScrollView, Alert} from 'react-native';
 
 export default class DonorFinder extends Component {
   constructor() {
     super();
+  }
+
+  state = {
+    bloodType: '',
+    city: '',
+  }
+
+  handleBloodType = (text) => {
+    this.setState({ bloodType: text });
+  }
+  handleCity = (text) => {
+    this.setState({ city: text });
+  }
+
+  onPressNext = (bloodType, city) => {
+    if (!city && !bloodType){
+      Alert.alert(' Error!..', 'Some information is not filled out !!', [
+        {text: 'ok.'},
+      ]);
+    }
   }
 
   render(){
@@ -21,7 +41,8 @@ export default class DonorFinder extends Component {
             placeholder="City"
             onChangeText = {this.handleCity}/>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress ={
+          () => this.onPressNext(this.state.bloodType, this.state.city)}>
           <Text style={styles.text1}> Ok </Text>
         </TouchableOpacity>
       </ScrollView>

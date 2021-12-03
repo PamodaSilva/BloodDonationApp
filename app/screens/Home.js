@@ -23,7 +23,8 @@ export default class Home extends Component {
         </View>
         <View style={styles.button}>
           <Button title="Login"
-            onPress={this.onPressLogin}/>
+            onPress={this.onPressLogin}
+            color="#F67676"/>
         </View>
         <View style={styles.view4}>
           <Image source={require('../assets/Image/pic1.png')} />

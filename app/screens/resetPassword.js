@@ -19,7 +19,11 @@ export default class finder extends Component {
   }
 
   pressSetPassword = (pw, RePw) => {
-    if (pw !== RePw){
+    if (!pw && !RePw){
+      Alert.alert(' Error!..', 'Some information is not filled out !!', [
+        {text: 'ok.'},
+      ]);
+    } else if (pw !== RePw){
       Alert.alert('Alert!..', ' Password Not Equal !!', [
         {text: 'ok.'},
       ]);
