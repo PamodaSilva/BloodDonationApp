@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   detail: {
-    borderWidth: 2,
+    borderWidth: 1.5,
     borderRadius: 30,
     fontSize: 25,
     margin: 8,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius:30,
     margin:10,
     width: 150,

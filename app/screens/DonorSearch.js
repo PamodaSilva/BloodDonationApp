@@ -60,14 +60,14 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 18,
-    borderWidth: 2,
+    borderWidth: 1.5,
     borderRadius:30,
-    margin:10,
+    margin:11,
     width: 320,
     textAlign: 'center',
   },
   button: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius:30,
     margin:10,
     width: 320,

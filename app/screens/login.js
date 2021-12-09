@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 20,
-    borderWidth: 3,
+    borderWidth: 1.5,
     borderRadius:30,
     margin:10,
     width: 320,
     textAlign: 'center',
   },
   button: {
-    borderWidth: 3,
+    borderWidth: 1,
     borderRadius:30,
     margin:10,
     width: 320,
