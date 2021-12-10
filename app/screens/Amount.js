@@ -11,7 +11,7 @@ export default class Amount extends Component {
     return (
       <View>
         <View style={styles.view1}>
-          <Image source={require('../assets/Image/pic6.png')}/>
+          <Image source={require('../assets/Image/Type.png')}/>
         </View>
         <View style={styles.view2}>
           <View>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 45,
+    marginTop: 25,
   },
   view4: {
     marginLeft: -15,
