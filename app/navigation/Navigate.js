@@ -10,6 +10,7 @@ import Donor01 from '../screens/Donor1';
 import Donor02 from '../screens/Donor2';
 import Finder from '../screens/Finder';
 import BottomNavigation from '../navigation/TabNavigation';
+import onBoarding from '../screens/onBoarding';
 
 const PrimaryNavigator = createStackNavigator();
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <NavigationContainer>
                 <PrimaryNavigator.Navigator headerMode={{}} initialRouteName="Home">
                     <PrimaryNavigator.Screen name="Home" component={Home}/>
+                    <PrimaryNavigator.Screen name="onBoarding" component={onBoarding}/>
                     <PrimaryNavigator.Screen name="login" component={login}/>
                     <PrimaryNavigator.Screen name="resetPassword" component={resetPassword}/>
                     <PrimaryNavigator.Screen name="page01" component={page01}/>

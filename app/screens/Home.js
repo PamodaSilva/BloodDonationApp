@@ -8,7 +8,7 @@ export default class Home extends Component {
   }
 
   onPressLogin = () => {
-    this.props.navigation.navigate('login');
+    this.props.navigation.navigate('onBoarding');
   }
 
   render() {
