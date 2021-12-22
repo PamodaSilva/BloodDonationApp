@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, Alert, ScrollView} from 'react-native';
 import SignIn from '../components/signin';
 import Firebase from '@react-native-firebase/app';
+import fireStore from '@react-native-firebase/firestore';
+import { add } from 'react-native-reanimated';
+
 export default class Donor2 extends Component {
   constructor() {
     super();
@@ -42,10 +45,17 @@ export default class Donor2 extends Component {
         {text: 'ok.'},
       ]);
     } else {
-        Alert.alert('Alert!..', ' Password Equal !!', [
-            {text: 'ok.'},
-        ]);
-        this.props.navigation.navigate('login');
+      fireStore().collection('Donor');
+        add({
+          Email,
+          TelPh01,
+          TelPh02,
+          pw,
+          RePw,
+        })
+        .then(() => {
+          this.props.navigation.navigate('login');
+        });
     }
   }
 

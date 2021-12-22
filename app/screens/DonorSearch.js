@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import {TextInput, View, StyleSheet, Image, TouchableOpacity, Text, ScrollView, Alert} from 'react-native';
+import Firebase from '@react-native-firebase/app';
+import fireStore from '@react-native-firebase/firestore';
 
 export default class DonorFinder extends Component {
   constructor() {
@@ -19,11 +21,16 @@ export default class DonorFinder extends Component {
     this.setState({ city: text });
   }
 
-  onPressNext = (bloodType, city) => {
+  onPressOk = (bloodType, city) => {
     if (!city && !bloodType){
       Alert.alert(' Error!..', 'Some information is not filled out !!', [
         {text: 'ok.'},
       ]);
+    } else {
+      fireStore().collection('Donor').where('bloodType', 'city').get()
+        .then(querySnapshot => {
+          /* ... */
+        });
     }
   }
 
@@ -42,7 +49,7 @@ export default class DonorFinder extends Component {
             onChangeText = {this.handleCity}/>
         </View>
         <TouchableOpacity style={styles.button} onPress ={
-          () => this.onPressNext(this.state.bloodType, this.state.city)}>
+          () => this.onPressOk(this.state.bloodType, this.state.city)}>
           <Text style={styles.text1}> Ok </Text>
         </TouchableOpacity>
       </ScrollView>

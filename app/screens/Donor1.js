@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import SignIn from '../components/signin';
 import Firebase from '@react-native-firebase/app';
+import fireStore from '@react-native-firebase/firestore';
+import { add } from 'react-native-reanimated';
+
 export default class Donor1 extends Component {
   constructor() {
     super();
@@ -38,7 +41,15 @@ export default class Donor1 extends Component {
         {text: 'ok.'},
       ]);
     } else {
-      this.props.navigation.navigate('Donor02');
+      fireStore().collection('Donor').doc('NIC');
+        add({
+          name,
+          city,
+          bloodType,
+        })
+        .then(() => {
+          this.props.navigation.navigate('Donor02');
+        });
     }
   }
 

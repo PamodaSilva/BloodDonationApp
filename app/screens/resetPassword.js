@@ -53,11 +53,11 @@ export default class finder extends Component {
             placeholder="NIC"
             onChangeText = {this.handleNIC}/>
           <TextInput style={styles.input}
-            placeholder="Password"
+            placeholder="New Password"
             onChangeText = {this.handlePw}
             secureTextEntry= {true}/>
           <TextInput style={styles.input}
-            placeholder="Re-Type Password"
+            placeholder="Re-Type New Password"
             onChangeText = {this.handleRePw}
             secureTextEntry= {true}/>
         </View>

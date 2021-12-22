@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import SignIn from '../components/signin';
 import Firebase from '@react-native-firebase/app';
+import fireStore from '@react-native-firebase/firestore';
+import { add } from 'react-native-reanimated';
 
 export default class finder extends Component {
   constructor() {
@@ -47,10 +49,17 @@ export default class finder extends Component {
         {text: 'ok.'},
       ]);
     } else {
-        Alert.alert('Alert!..', ' Password Equal !!', [
-            {text: 'ok.'},
-        ]);
-        this.props.navigation.navigate('login');
+        fireStore().collection('finder').doc('NIC');
+        add({
+          name,
+          city,
+          TelPh,
+          pw,
+          RePw,
+        })
+        .then(() => {
+          this.props.navigation.navigate('login');
+        });
     }
   }
 

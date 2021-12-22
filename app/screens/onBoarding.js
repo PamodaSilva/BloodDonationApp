@@ -6,7 +6,7 @@ import Onboarding from 'react-native-onboarding-swiper';
 
 const done = ({...props}) => (
     <TouchableOpacity style={styles.button} {...props}>
-        <Text style={styles.text}> Done </Text>
+        <Text style={styles.text}> Login </Text>
     </TouchableOpacity>
 
 );
