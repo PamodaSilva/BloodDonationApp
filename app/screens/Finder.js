@@ -58,6 +58,9 @@ export default class finder extends Component {
           RePw,
         })
         .then(() => {
+          Alert.alert('Alert!..', ' Successfully save data. !!', [
+            {text: 'ok.'},
+          ]);
           this.props.navigation.navigate('login');
         });
     }
