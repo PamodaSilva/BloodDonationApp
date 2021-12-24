@@ -56,7 +56,7 @@ export default class Donor2 extends Component {
         .then(() => {
           Alert.alert('Alert!..', ' Successfully save data. !!', [
             {text: 'ok.'},
-          ])
+          ]);
           this.props.navigation.navigate('login');
         });
     }
